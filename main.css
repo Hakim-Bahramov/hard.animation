@@ -1,0 +1,138 @@
+body{
+	font-family: sans-serif;
+}
+*{
+	box-sizing: border-box;
+}
+.wrapper{
+	width: 1200px;
+	margin: 2rem auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+div div{
+	width: 25%;
+	text-align: center;
+	padding: 2rem;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s;
+}
+.box-1, .box-1::before, .box-2::before{
+	background-color: #cc66ff;
+}
+.box-2, .box-3::before{
+	background-color: #33cccc;
+}
+.box-3, .box-4::before{
+	background-color: #00cc99;
+}
+.box-4{
+	background-color: #33cc33;
+}
+.box-5, .box-5::before, .box-6::before{
+	background-color: #ffe066;
+}
+.box-6, .box-7::before{
+	background-color: #ffbf80;
+}
+.box-7, .box-8::before{
+	background-color: #ff80bf;
+}
+.box-8{
+	background-color: #00cc99;
+}
+img{
+	width: 60px;
+	transition: all 0.3s;
+}
+p{
+	color: white;
+}
+div p:nth-child(2){
+	font-size: 18px;
+}
+div p:nth-child(3){
+	font-size: 12px;
+	line-height: 20px;
+}
+div div::before{
+	content:"";
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	background-color: white;
+	top: 40%;
+	left: -20px;
+	transform: rotateZ(45deg);
+	transition: all 0.3s;
+}
+.box:hover, .box:hover + div::before{
+	background-color: #3366cc;
+}
+.box-1::before, .box-5::before{
+	display: none;
+}
+.box:hover img{
+	transform: scale(1.2);
+}
+
+
+
+@media (min-width: 0) and (max-width: 446.9px){
+	.wrapper{
+		width: 100%;
+		justify-content: center;
+	}
+	.box{
+		width: 90%;
+	}
+	div div::before{
+		display: none;
+	}
+}
+@media (min-width: 447px) and (max-width: 768.9px){
+	.wrapper{
+		width: 100%;
+		justify-content: center;
+	}
+	.box{
+		width: 50%;
+	}
+	.box-3::before , .box-7::before{
+		display: none;
+	}
+}
+@media (min-width: 769px) and (max-width: 989.9px){
+	.wrapper{
+		width: 100%;
+		justify-content: center;
+	}
+	.box{
+		width: 33%;
+	}
+	.box-4::before , .box-7::before{
+		display: none;
+	}
+	.box-5::before{
+		display: block;
+		background-color: #33cc33;
+	}
+}
+@media (min-width: 990px) and (max-width: 1199.9px){
+	.wrapper{
+		width: 100%;
+	}
+	.box{
+		width: 25%;
+	}
+}
+@media (min-width: 1200px){
+	.wrapper{
+		width: 1170px;
+	}
+	.box{
+		width: 25%;
+	}
+}
